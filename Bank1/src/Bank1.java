@@ -244,40 +244,40 @@ public static void displayAll(String []name, int[]ID, int[]password,int[] deposi
 	for(int i=0; i< (name.length-1); i++) {
 		int total1=0;
 		f++;
-		System.out.printf(("%5S %11S %10d %12d  ") , (i+1), name[i], ID[i], password[i]);
+		System.out.printf(("%13S %10S %12d %15d ") , (i+1), name[i], ID[i], password[i]);
 		if(i>1) {
 	    	count+= count;
 	    }
 	for(int j =0; j< countD; j++) {
-		System.out.printf("%8d %S %S",deposit[(j+count)],"$", "");
+		System.out.printf("%8d %S %S",deposit[(j+count)],"$", "    ");
 		total1+=deposit[(j+count)];
 		sum.add(total1);
 
 		}
 	System.out.printf("%10d", withdra[i]);
 
-	System.out.printf(" %8d %S \n",(total1 -withdra[i]),"$");
+	System.out.printf(" %11d %S \n",(total1 -withdra[i]),"$");
 	count = countD;
 	System.out.println();
 	}
 	if(name.length==1) {
-		System.out.printf(("%5S %11S %10d %12d ") ,(1),name[0], ID[0], password[0]); 
+		System.out.printf(("%13S %10S %12d %15d ") ,(1),name[0], ID[0], password[0]); 
 		displayD(name,ID,password,deposit,withdra,sum);
 	}else {
 		int total=0;
-	System.out.printf(("%5S %11S %10d %12d  ") ,(f+1),name[(f)], ID[(f)], password[(f)]);
+	System.out.printf(("%13S %10S %12d %15d  ") ,(f+1),name[(f)], ID[(f)], password[(f)]);
 	
 	if(name.length>2) {
 		count+=count;
 	}
 	for(int j =0; j< countD; j++) {
-		System.out.printf("%8d %S %S",deposit[(j+count)],"$", "");
+		System.out.printf("%8d %S %S",deposit[(j+count)],"$", "    ");
 		 total+=deposit[(j+count)];
 		 sum.add(total);
 		}
 	System.out.printf("%10d", withdra[f]);
 
-	System.out.printf(" %8d %S \n",(total -withdra[f]),"$");
+	System.out.printf(" %11d %S \n",(total -withdra[f]),"$");
 	System.out.println();
 	}
 
@@ -294,7 +294,7 @@ public static void displayD(String []name, int[]ID, int[]password,int[] deposit,
 		    	count+= count;
 		    }
 		for(int j =0; j< countD; j++) {
-			System.out.printf("%8d %S %S",deposit[(j+count)],"$", "");
+			System.out.printf("%8d %S %S",deposit[(j+count)],"$", "    ");
 			total2+=deposit[(j+count)];
 			sum.add(total2);
 
@@ -302,7 +302,7 @@ public static void displayD(String []name, int[]ID, int[]password,int[] deposit,
 		System.out.printf("%10d", withdra[0]);
 
 		count = countD;
-		System.out.printf(" %8d %S \n",(total2 -withdra[0]),"$");
+		System.out.printf(" %11d %S \n",(total2 -withdra[0]),"$");
 }
 	}
 ///////////////////////////////////////////////////////////////////////
@@ -490,9 +490,9 @@ public static void displaySearch() {
 	int search = Binsearch();
 	holder();
 	int total2=0;
-	System.out.printf(("%5S %11S %10d %12d  ") , (search+1), name[search], ID[search], password[search]);
+	System.out.printf(("%5S %15S %18d %17d  ") , (search+1), name[search], ID[search], password[search]);
 	for(int j = 0; j< countD; j++) {
-		System.out.printf("%d %S %S",deposit[(j+search)],"$", "");
+		System.out.printf("%5d %5S %5S",deposit[(j+search)],"$", "");
 		total2+=deposit[(j+search)];
 		}
 	System.out.printf("%9d",withdra[search]);
